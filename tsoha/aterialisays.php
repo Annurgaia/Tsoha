@@ -1,7 +1,6 @@
 <?php
 include("yhteys.php");
 
-$yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //transaktion alku
 $yhteys->beginTransaction();
