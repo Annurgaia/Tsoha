@@ -11,10 +11,10 @@ CREATE TABLE Resepti (
 CREATE TABLE Juoma (
 	JuomaID		SERIAL PRIMARY KEY,
 	Nimi		TEXT,
-	ALC%		INTEGER
+	ALC		INTEGER
 );
 
-CREATE TABLE Raaka-Aine (
+CREATE TABLE RaakaAine (
 	RaakaAineID	SERIAL,
 	ReseptiID	SERIAL
 );
