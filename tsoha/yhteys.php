@@ -5,5 +5,5 @@ try {
     die("VIRHE: " . $e->getMessage());
 }
 $yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$yhteys->exec("SET NAMES latin1");
+//$yhteys->exec("SET NAMES latin1");
 ?>
