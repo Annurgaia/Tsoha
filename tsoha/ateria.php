@@ -24,7 +24,7 @@ $v = $_GET['nimi'];
 // kyselyn suoritus.. tässä on vielä vähän häikkää miten pitäisi toimia. 
 
 
-$kysely = $yhteys->prepare("SELECT nimi FROM ateria WHERE nimi like '%$v%' "); 
+$kysely = $yhteys->prepare("SELECT nimi FROM ateriakokonaisuus WHERE nimi like '%$v%' "); 
 $kysely->execute();
 
 // haettujen rivien tulostus

@@ -26,7 +26,7 @@ $tulos = $_GET['ateriahaku'];
 echo $tulos;
 
 // kyselyn suoritus
-$kysely = $yhteys->prepare("SELECT nimi FROM ateria WHERE 
+$kysely = $yhteys->prepare("SELECT nimi FROM ateriakokonaisuus WHERE 
 nimi like '%$tulos%' "); 
 $kysely->execute();
 
