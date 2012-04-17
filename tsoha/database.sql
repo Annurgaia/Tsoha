@@ -15,6 +15,7 @@ CREATE TABLE Juoma (
 );
 
 CREATE TABLE RaakaAine (
+	Nimi		TEXT,	
 	RaakaAineID	SERIAL,
 	ReseptiID	SERIAL
 );
