@@ -25,7 +25,7 @@ $kysely->execute();
 $tulos = $kysely->fetch();
 
 echo '<form name="intput" action="ateriamuokkaus.php" method="POST">';
-echo '<p>Nimi: </br><input type="text" name="nimi" value="'.$tulos[nimi].'" readonly></p>';
+echo '<p>Nimi: </br><input type="text" name="nimi" value="'.$tulos["nimi"].'" readonly></p>';
 
 echo '<p>Resepti: </br><textarea name="resepti" cols=40 rows=7>';
 echo $tulos[resepti];
@@ -45,7 +45,7 @@ echo '  <select name="raakaaineid[]" multiple>';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi[raakaaienid]. ' >'.$rivi[nimi]. '</option>';
+echo '  <option value=' .$rivi["raakaaineid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo '</select></br> ';
 
@@ -58,7 +58,7 @@ echo '  <select  name="juomaid">';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi[juomaid]. ' >'.$rivi[nimi]. '</option>';
+echo '  <option value=' .$rivi["juomaid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo ' </select></br> ';
 

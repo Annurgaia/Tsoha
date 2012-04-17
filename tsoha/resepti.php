@@ -56,7 +56,7 @@ echo  $rivib["nimi"]  ;
 echo '</br></br> ';
 }
 
-$nimi = $_GET[nimi];
+$nimi = $_GET["nimi"];
 
 $kyselyc = $yhteys->prepare("SELECT raakaaine.nimi AS raakaaine FROM raakaaine WHERE raakaaineid in
 (SELECT raakaaineid FROM raakaainevalitaulu WHERE reseptiid in(SELECT reseptiid 
