@@ -68,9 +68,6 @@ echo '</select></br> ';
 
 echo '<input type="submit" value="luo">';
 
-
-
-
 echo '</form>';
 
 ?>
