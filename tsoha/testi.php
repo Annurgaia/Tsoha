@@ -10,11 +10,7 @@
 <div id="otsikko">Resepti</div>
 <div id="container">
 <div id="navipalkki">
-<ul id="navi">
-  <li><a href="index.html">Etusivu</a></li>
-  <li><a href="kirjautumissivu.html">Kirjaudu sisään</a></li>
-  <li><a href="rekisterointi.html">Rekisteröidy asiakkaaksi</a></li>
-</ul>
+<?php include 'navi.html'; ?>
 </div>
 <div id="sisalto">Tähän tulee reseptihaun tulokset 
 
