@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type"
- content="text/html; charset=ISO-8859-1">
+ content="text/html; charset=UTF-8">
   <title>Ateriakokonaisuus</title>
   <link href="tyyli.css" rel="stylesheet" type="text/css">
 </head>

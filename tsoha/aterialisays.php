@@ -16,8 +16,7 @@ $reseptiid->execute();
 //haetaan resepti id 
 $tulos = $reseptiid->fetchColumn();
 
-
-//WE NEED ATERIAID
+//Tarvii AteriaID
 /*
 $kysely = $yhteys->prepare("INSERT INTO raakaainevalitaulu (raakaaineid,
 reseptiid)VALUES (?,?)");

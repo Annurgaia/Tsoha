@@ -7,15 +7,8 @@ include("yhteys.php");
 $kysely = $yhteys->prepare("INSERT INTO juoma (nimi, alc) VALUES (?, ?)");
 $kysely->execute(array($_POST["nimi"], $_POST["alc"]));
 
-
-
 //$URL="index.html";
 //header ("Location: $URL");
-echo 'Juoma lisatty.. siirry etusivulle';
+echo 'Juoma lisatty...siirry etusivulle';
 echo '<a href="index.html">Etusivu</a>';
- 
-
-
-
-
 ?>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type"
- content="text/html; charset=ISO-8859-1">
+ content="text/html; charset=UTF-8">
   <title>Resepti</title>
   <link href="tyyli.css" rel="stylesheet" type="text/css">
 </head>
@@ -13,13 +13,13 @@
 <ul id="navi">
   <li><a href="index.html">Etusivu</a></li>
 </br>
-  <li><a href="hakusivu.html">Hae reseptej‰ ja ateriakokonaisuuksia</a></li>
+  <li><a href="hakusivu.html">Hae reseptej√§ ja ateriakokonaisuuksia</a></li>
 </br>
-  <li><a href="lisaaresepti.php">Lis‰‰ uusi resepti</a></li>
-  <li><a href="lisaaateria.php">Lis‰‰ uusi ateriakokonaisuus</a></li>
+  <li><a href="lisaaresepti.php">Lis√§√§ uusi resepti</a></li>
+  <li><a href="lisaaateria.php">Lis√§√§ uusi ateriakokonaisuus</a></li>
 </br>
-  <li><a href="lisaajuoma.html">Lis‰‰ uusi juoma</a></li>
-  <li><a href="raakaainelisays.html">Lis‰‰ uusi raaka-aine</a></li>
+  <li><a href="lisaajuoma.html">Lis√§√§ uusi juoma</a></li>
+  <li><a href="raakaainelisays.html">Lis√§√§ uusi raaka-aine</a></li>
 </ul>
 </div>
 <div id="sisalto">Reseptihaun tulokset: 
@@ -32,7 +32,7 @@ include("yhteys.php");
 
 $v = $_GET['nimi'];
 
-// kyselyn suoritus.. t‰ss‰ on viel‰ v‰h‰n h‰ikk‰‰ miten pit‰isi toimia.
+// kyselyn suoritus.. t√§ss√§ on viel√§ v√§h√§n h√§ikk√§√§ miten pit√§isi toimia.
 $kysely = $yhteys->prepare("SELECT nimi, resepti,yleiskuvaus FROM resepti
 WHERE nimi like '%$v%' "); 
 
@@ -86,7 +86,7 @@ while ($rivi = $kyselyc->fetch()) {
     echo '</br></br>';      
     echo '<td><a href="poistaresepti.php?nimi='. $nimi.'  ">Poista resepti </td>';
 	echo '</br>';
-    echo '<td><a href="muokkaareseptia.php?nimi=' .$nimi.'">Muokkaa resepti‰ </td>';
+    echo '<td><a href="muokkaareseptia.php?nimi=' .$nimi.'">Muokkaa resepti√§ </td>';
 
    echo '</br>';
     
