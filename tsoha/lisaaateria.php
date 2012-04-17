@@ -34,7 +34,7 @@ echo '  <select multiple="multiple" name="ateriaid[]">';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi[reseptiid]. ' >'.$rivi[nimi]. '</option>';
+echo '  <option value=' .$rivi["reseptiid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo '</select></br> ';
 

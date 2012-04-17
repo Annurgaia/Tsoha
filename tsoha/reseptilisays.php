@@ -5,7 +5,7 @@ include("yhteys.php");
 
 //transaktion alku
 $yhteys->beginTransaction();
-$nimi=$_POST[nimi];
+$nimi=$_POST['nimi'];
 
 $kysely = $yhteys->prepare("INSERT INTO resepti(nimi, yleiskuvaus, resepti, juomaid) VALUES (?,?,?,?)");
 $kysely->execute(array($_POST["nimi"], $_POST["kuvaus"],
