@@ -37,7 +37,6 @@ $kysely->execute(array($_POST["juomaid"], $result ));
 */
 
 $yhteys->commit();
-
 }
 	catch (Exception $e) {
 	$yhteys->rollBack();
@@ -46,7 +45,7 @@ $yhteys->commit();
 
 //force siirtyminen vaikka etusivulle. 
 $URL="lisaaresepti.php";
-header ("Location: $URL");
+//header ("Location: $URL");
 
 ?>
 </div>

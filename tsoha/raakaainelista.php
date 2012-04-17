@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type"
- content="text/html; charset=ISO-8859-1">
+ content="text/html; charset=UTF-8">
   <title>Raaka-aineet</title>
   <link href="tyyli.css" rel="stylesheet" type="text/css">
 </head>
@@ -13,15 +13,15 @@
 <ul id="navi">
   <li><a href="index.html">Etusivu</a></li>
 </br>
-  <li><a href="hakusivu.html">Hae reseptejä ja ateriakokonaisuuksia</a></li>
+  <li><a href="hakusivu.html">Hae reseptejÃ¤ ja ateriakokonaisuuksia</a></li>
 </br>
-  <li><a href="lisaaresepti.php">Lisää uusi resepti</a></li>
-  <li><a href="lisaaateria.php">Lisää uusi ateriakokonaisuus</a></li>
+  <li><a href="lisaaresepti.php">LisÃ¤Ã¤ uusi resepti</a></li>
+  <li><a href="lisaaateria.php">LisÃ¤Ã¤ uusi ateriakokonaisuus</a></li>
 </br>
-  <li><a href="lisaajuoma.html">Lisää uusi juoma</a></li>
-  <li><a href="raakaainelisays.html">Lisää uusi raaka-aine</a></li>
-  <!--<li><a href="kirjautumissivu.html">Kirjaudu sisään</a></li>
-  <li><a href="rekisterointi.html">Rekisteröidy asiakkaaksi</a></li>-->
+  <li><a href="lisaajuoma.html">LisÃ¤Ã¤ uusi juoma</a></li>
+  <li><a href="raakaainelisays.html">LisÃ¤Ã¤ uusi raaka-aine</a></li>
+  <!--<li><a href="kirjautumissivu.html">Kirjaudu sisÃ¤Ã¤n</a></li>
+  <li><a href="rekisterointi.html">RekisterÃ¶idy asiakkaaksi</a></li>-->
 
 
 </ul>

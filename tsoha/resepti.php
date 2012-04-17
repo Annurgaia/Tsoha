@@ -33,7 +33,7 @@ include("yhteys.php");
 $v = $_GET['nimi'];
 
 // kyselyn suoritus.. tässä on vielä vähän häikkää miten pitäisi toimia.
-$kysely = $yhteys->prepare("SELECT nimi, resepti,yleiskuvaus FROM resepti
+$kysely = $yhteys->prepare("SELECT nimi, resepti, yleiskuvaus FROM resepti
 WHERE nimi like '%$v%' "); 
 
 $kysely->execute();

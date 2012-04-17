@@ -37,8 +37,8 @@ $kysely->execute(array($tulos, $row));
 }
 
 $yhteys->commit();
-
 }
+
 	catch (Exception $e) {
 	$yhteys->rollBack();
 	echo "failed: ". $e->getMessage();
