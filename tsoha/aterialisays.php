@@ -19,10 +19,10 @@ try {
 
 //transaktion alku
     $yhteys->beginTransaction();
-    $nimi = $_POST["nimi"];
+    $nimi = $_POST['nimi'];
 
     $kysely = $yhteys->prepare("INSERT INTO ateriakokonaisuus (nimi) VALUES (?)");
-    $kysely->execute(array($_POST["nimi"]));
+    $kysely->execute(array($_POST['nimi']));
 
     $reseptiid = $yhteys->prepare("SELECT ateriaid FROM ateriakokonaisuus WHERE nimi like '%$nimi' ");
     $reseptiid->execute();
@@ -44,10 +44,10 @@ try {
 }
 
 //force siirtyminen vaikka etusivulle. 
-$URL = "lisaaateria.php";
-header("Location: $URL");
-//echo ' Ateriaa lisätty...siirry';
-//echo ' <a href=index.php>etusivulle</a>';
+//$URL = "lisaaateria.php";
+//header("Location: $URL");
+echo ' Ateriaa lisätty...siirry';
+echo ' <a href=index.php>etusivulle</a>';
 ?>
 </div>
 </body>
