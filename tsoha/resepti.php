@@ -43,7 +43,7 @@
                 $nimi = $kysely->fetchColumn();
 
                 $kyselyb = $yhteys->prepare("SELECT nimi FROM juoma WHERE juomaid = (SELECT juomaid FROM resepti WHERE nimi like '%$v%' ) ");
-                $kyselyb->execute();
+                $kyselyb->execute(); //Uncaught exception 'PDOException' with message 'SQLSTATE[21000]: Cardinality violation: 7 ERROR:  more than one row returned by a subquery used as an expression' in /home/annahiet/htdocs/tsoha/resepti.php:46
 
 
                 while ($rivib = $kyselyb->fetch()) {
