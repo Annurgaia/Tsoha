@@ -27,51 +27,36 @@
 
 // haettujen rivien tulostus
 
-                while ($rivi = $kysely->fetch()) {
+while ($rivi = $kysely->fetch()) {
+    
+     echo '</br>Nimi:</br> ';
+     echo $rivi["nimi"] ;
+echo '</br>';
+echo '</br>';
+ }
 
-                /* echo '</br>Nimi:</br> ';
-                  echo $rivi["nimi"] ;
-                  echo '</br>';
-                  echo '</br>';
-                 */
-                echo "<tr>";
-                echo '<td><a href="resepti.php?nimi=' .$rivi["nimi"]. '">' . $rivi["nimi"] . ' </td>';
-                echo '<td>' . $rivi["yleiskuvaus"] .' </td>';
-                echo "</tr>";
-                //}
-                //echo "</table>";
-                }
+$kyselyb = $yhteys->prepare ("SELECT nimi FROM resepti WHERE reseptiid IN
+(SELECT reseptiid FROM ateriakokonaisuusvalitaulu WHERE ateriaid IN (SELECT ateriaid FROM ateria WHERE
+nimi like '$v' ) ) ");
 
-                $kyselyb = $yhteys->prepare ("SELECT nimi FROM resepti WHERE reseptiid IN (SELECT reseptiid FROM ateriakokonaisuusvalitaulu WHERE ateriaid IN (SELECT ateriaid FROM ateria WHERE nimi like '$v' ) ) ");
+$kyselyb->execute();
 
-                $kyselyb->execute();
-
-                echo 'Reseptit: ';
-                echo '</br>';
-                while($rivib = $kyselyb->fetch()) {
-
+echo 'Reseptit: ';
+echo '</br>';
+while($rivib = $kyselyb->fetch()) {
+ 
 //näistä pitäisi tehdä linkit!
-                echo $rivib["nimi"];
-                echo '</br> ';
-                }
+echo $rivib["nimi"] ;
+echo '</br> ';
+}
 
-                echo '</br></br>';
-                echo '<td><a href="poistaateria.php?nimi='. $nimi.'  ">Poista ateriakokonaisuus </td>';
-                echo '</br>';
-                echo '<td><a href="muokkaaateriaa.php?nimi=' .$nimi.'">Muokkaa ateriakokonaisuutta </td>';
+    echo '</br></br>';
+    echo '<td><a href="poistaateria.php?nimi='.$v.' ">Poista ateriakokonaisuus </td>';
+    echo '</br>';
+    echo '<td><a href="muokkaaateriaa.php?nimi=' .$v.' " >Muokkaa ateriakokonaisuutta </td>';
 
-                echo '</br>';
-
-
-                echo '</table>';
-                /*
-                  echo '</br></br>';
-                  echo '<td><a href="poistaateria.php?nimi='.$v.' ">Poista ateriakokonaisuus </td>';
-                  echo '</br>';
-                  echo '<td><a href="muokkaaateriaa.php?nimi=' .$v.' " >Muokkaa ateriakokonaisuutta </td>';
-                 */
-                ?>
-            </div>
-        </div>
-    </body>
+?>
+</div>
+</div>
+</body>
 </html>

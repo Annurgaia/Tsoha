@@ -43,15 +43,6 @@ foreach ($myarray as $row){
 $kysely->execute(array($row, $result ));
 }
 
-/*
-//lisätään juoma reseptiin
-$kysely = $yhteys->prepare("INSERT INTO juoma (juomaid,
-reseptiid)VALUES (?,?)");
-$myarray = $_POST["juomaid"];
-foreach($myarray as $row){
-$kysely->execute(array($_POST["juomaid"], $result ));
-*/
-
 $yhteys->commit();
 }
         catch (Exception $e) {

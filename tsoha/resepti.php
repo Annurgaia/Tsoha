@@ -22,8 +22,7 @@
                 $v = $_GET['nimi'];
 
 // kyselyn suoritus.. tässä on vielä vähän häikkää miten pitäisi toimia.
-                $kysely = $yhteys->prepare("SELECT nimi, resepti, yleiskuvaus FROM resepti
-WHERE nimi like '%$v%' ");
+                $kysely = $yhteys->prepare("SELECT nimi, resepti, yleiskuvaus FROM resepti WHERE nimi like '%$v%' ");
 
                 $kysely->execute();
 
@@ -43,8 +42,7 @@ WHERE nimi like '%$v%' ");
 
                 $nimi = $kysely->fetchColumn();
 
-                $kyselyb = $yhteys->prepare("SELECT nimi FROM juoma 
-WHERE juomaid = (SELECT juomaid FROM resepti WHERE nimi like '%$v%' ) ");
+                $kyselyb = $yhteys->prepare("SELECT nimi FROM juoma WHERE juomaid = (SELECT juomaid FROM resepti WHERE nimi like '%$v%' ) ");
                 $kyselyb->execute();
 
 
@@ -57,9 +55,7 @@ WHERE juomaid = (SELECT juomaid FROM resepti WHERE nimi like '%$v%' ) ");
 
                 $nimi = $_GET["nimi"];
 
-                $kyselyc = $yhteys->prepare("SELECT raakaaine.nimi AS raakaaine FROM raakaaine WHERE raakaaineid in
-(SELECT raakaaineid FROM raakaainevalitaulu WHERE reseptiid in(SELECT reseptiid 
-FROM resepti WHERE nimi like '$v' ) ) ");
+                $kyselyc = $yhteys->prepare("SELECT raakaaine.nimi AS raakaaine FROM raakaaine WHERE raakaaineid in (SELECT raakaaineid FROM raakaainevalitaulu WHERE reseptiid in(SELECT reseptiid FROM resepti WHERE nimi like '$v' ) ) ");
                 $kyselyc->execute();
 
                 echo 'Tarvittavat raaka-aineet: </br> ';

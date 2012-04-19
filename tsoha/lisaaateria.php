@@ -26,20 +26,21 @@
 
 include("yhteys.php");
 
-$kysely =$yhteys->prepare("SELECT reseptiid, nimi FROM resepti");  
+$kysely =$yhteys->prepare("SELECT reseptiid, nimi FROM resepti");
 $kysely->execute();
 
 
-echo '  <select multiple="multiple" name="ateriaid[]">';
+echo ' <select multiple="multiple" name="ateriaid[]">';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi["reseptiid"]. ' >'.$rivi["nimi"]. '</option>';
+echo ' <option value=' .$rivi["reseptiid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo '</select></br> ';
 
 echo '<input type="submit" value="luo">';
 echo '</form>';
+
 
 ?>
 </div>
