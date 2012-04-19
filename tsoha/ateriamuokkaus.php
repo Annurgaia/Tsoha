@@ -12,8 +12,7 @@ $kysely = $yhteys->prepare("UPDATE resepti SET yleiskuvaus ='$_POST[kuvaus]', re
 $kysely->execute();
 */
 
-$reseptiid = $yhteys->prepare ("SELECT ateriaid FROM ateria 
-WHERE nimi like '%$nimi' ");
+$reseptiid = $yhteys->prepare ("SELECT ateriaid FROM ateria WHERE nimi like '%$nimi' ");
 $reseptiid->execute();
 $result = $reseptiid->fetchColumn();
 

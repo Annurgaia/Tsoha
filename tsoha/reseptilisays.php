@@ -1,63 +1,59 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-  <meta http-equiv="content-type"
- content="text/html; charset=UTF-8">
-  <title>Reseptinlisäys</title>
-  <link href="tyyli.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div id="otsikko">Reseptit</div>
-<div id="container">
-<div id="navipalkki">
-<?php include 'navi.html'; ?>
-</div>
-<div id="sisalto">Reseptihaun tulokset: 
+    <head>
+        <meta http-equiv="content-type"
+              content="text/html; charset=UTF-8">
+        <title>Reseptinlisäys</title>
+        <link href="tyyli.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="otsikko">Reseptit</div>
+        <div id="container">
+            <div id="navipalkki">
+                <?php include 'navi.html'; ?>
+            </div>
 
-<?php
-try{
+                <?php
+                try {
 // yhteyden muodostus tietokantaan
-include("yhteys.php");
+                    include("yhteys.php");
 
 //transaktion alku
-$yhteys->beginTransaction();
-$nimi=$_POST['nimi'];
+                    $yhteys->beginTransaction();
+                    $nimi = $_POST['nimi'];
 
-$kysely = $yhteys->prepare("INSERT INTO resepti(nimi, yleiskuvaus, resepti, juomaid) VALUES (?,?,?,?)");
-$kysely->execute(array($_POST["nimi"], $_POST["kuvaus"],
- $_POST["resepti"], (int)$_POST["juomaid"] ));
+                    $kysely = $yhteys->prepare("INSERT INTO resepti(nimi, yleiskuvaus, resepti, juomaid) VALUES (?,?,?,?)");
+                    $kysely->execute(array($_POST["nimi"], $_POST["kuvaus"],
+                        $_POST["resepti"], (int) $_POST["juomaid"]));
 
-$reseptiid = $yhteys->prepare ("SELECT reseptiid FROM resepti 
-WHERE nimi like '%$nimi' ");
-$reseptiid->execute();
-$result = $reseptiid->fetchColumn();
+                    $reseptiid = $yhteys->prepare("SELECT reseptiid FROM resepti WHERE nimi like '%$nimi' ");
+                    $reseptiid->execute();
+                    $result = $reseptiid->fetchColumn();
 
 //lisätään raaka-aineet reseptiin.
 
 
-$kysely = $yhteys->prepare("INSERT INTO raakaainevalitaulu (raakaaineid, 
-reseptiid)VALUES (?,?)");
-$myarray = $_POST['raakaaineid'];
-foreach ($myarray as $row){
+                    $kysely = $yhteys->prepare("INSERT INTO raakaainevalitaulu (raakaaineid, reseptiid)VALUES (?,?)");
+                    $myarray = $_POST['raakaaineid'];
+                    foreach ($myarray as $row) {
 
-$kysely->execute(array($row, $result ));
-}
+                        $kysely->execute(array($row, $result));
+                    }
 
-$yhteys->commit();
-}
-        catch (Exception $e) {
-        $yhteys->rollBack();
-        echo "failed: ". $e->getMessage();
-        }
+                    $yhteys->commit();
+                } catch (Exception $e) {
+                    $yhteys->rollBack();
+                    echo "failed: " . $e->getMessage();
+                }
 
 //force siirtyminen vaikka etusivulle. 
-$URL="lisaaresepti.php";
+                $URL = "lisaaresepti.php";
 //header ("Location: $URL");
-echo 'Resepti lisätty...siirry etusivulle.';
+                echo 'Resepti lisätty...siirry etusivulle.';
 //echo '<a href="index.php">Etusivu</a>';
-?>
-</div>
-</div>
-</body>
+                ?>
+            </div>
+        </div>
+    </body>
 </html>
-                                             
+

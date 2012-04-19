@@ -20,11 +20,11 @@
 include("yhteys.php");
 
 $kysely =$yhteys->prepare("SELECT nimi, resepti, yleiskuvaus FROM resepti
- WHERE nimi like '%$_GET[nimi]%' ");
-$kysely->execute();  
+WHERE nimi like '%$_GET[nimi]%' ");
+$kysely->execute();
 $tulos = $kysely->fetch();
 
-echo '<form name="intput" action="ateriamuokkaus.php" method="POST">';
+echo '<form name="intput" action="reseptimuokkaus.php" method="POST">';
 echo '<p>Nimi: </br><input type="text" name="nimi" value="'.$tulos["nimi"].'" readonly></p>';
 
 echo '<p>Resepti: </br><textarea name="resepti" cols=40 rows=7>';
@@ -41,11 +41,11 @@ $kysely =$yhteys->prepare("SELECT raakaaineid, nimi FROM raakaaine");
 $kysely->execute();
 
 
-echo '  <select name="raakaaineid[]" multiple>';
+echo ' <select name="raakaaineid[]" multiple>';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi["raakaaineid"]. ' >'.$rivi["nimi"]. '</option>';
+echo ' <option value=' .$rivi["raakaaineid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo '</select></br> ';
 
@@ -54,11 +54,11 @@ echo '</select></br> ';
 $kysely =$yhteys->prepare("SELECT juomaid, nimi FROM juoma");
 $kysely->execute();
 echo 'Valitse juoma: </br>';
-echo '  <select  name="juomaid">';
+echo ' <select name="juomaid">';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi["juomaid"]. ' >'.$rivi["nimi"]. '</option>';
+echo ' <option value=' .$rivi["juomaid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo ' </select></br> ';
 
