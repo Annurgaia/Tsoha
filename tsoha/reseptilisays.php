@@ -46,9 +46,7 @@ $yhteys->commit();
 //force siirtyminen vaikka etusivulle. 
 $URL="lisaaresepti.php";
 //header ("Location: $URL");
-
+echo 'Juoma lisatty...siirry etusivulle';
+echo '<a href="index.php">  Etusivu</a>';
 ?>
-~                                                                                                                                                                                                              
-~                                                                                                                                                                                                              
-~                                                                                                                                                                                                              
-~                                              
+                                             

@@ -13,27 +13,20 @@
 <ul id="navi">
   <li><a href="index.php">Etusivu</a></li>
   <li><a href="hakusivu.html">Hakusivu</a></li>
-  <li><a href="kirjautumissivu.html">Kirjaudu sis‰‰n</a></li>
-  <li><a href="rekisterointi.html">Rekisterˆidy asiakkaaksi</a></li>
+  <li><a href="kirjautumissivu.html">Kirjaudu sis√§√§n</a></li>
+  <li><a href="rekisterointi.html">Rekister√∂idy asiakkaaksi</a></li>
 </br>
-  <li><a href="lisaaresepti.php">Uuden reseptin lis‰ys</a></li>
+  <li><a href="lisaaresepti.php">Uuden reseptin lis√§ys</a></li>
   <li><a href="reseptimuokkaus.html">Reseptin muokkaus</a></li>
 </ul>
 </div>
-<div id="sisalto">T‰h‰n tulee reseptihaun tulokset 
+<div id="sisalto">T√§h√§n tulee reseptihaun tulokset 
 
 <?php
 
 // yhteyden muodostus tietokantaan
 
-try {
-    $yhteys = new PDO("pgsql:host=localhost;dbname=annahiet",
-                      "annahiet", "eb7e53f691791852");
-}
- catch (PDOException $e) {
-    die("VIRHE: " . $e->getMessage());
-}
-$yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+include("yhteys.php");
 
 // kyselyn suoritus
 $kysely = $yhteys->prepare("SELECT nimi, yleiskuvaus, resepti, juoma,  FROM resepti INNER JOIN juoma ON 
@@ -54,7 +47,7 @@ while ($rivi = $kysely->fetch()) {
 echo "</table>";
 
    echo '<td><a href="poista.php?nimi=' .$rivi["nimi"]. '">Poista resepti </td>';
-   echo '<td><a href="muokkaa.php?nimi=' .$rivi["nimi"]. '">Muokkaa resepti‰ </td>';
+   echo '<td><a href="muokkaa.php?nimi=' .$rivi["nimi"]. '">Muokkaa resepti√§ </td>';
 
 ?>
 
