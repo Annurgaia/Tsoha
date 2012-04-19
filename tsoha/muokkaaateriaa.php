@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type"
  content="text/html; charset=UTF-8">
-  <title>Reseptin muokkaaminen</title>
+  <title>Aterian muokkaaminen</title>
   <link href="tyyli.css" rel="stylesheet" type="text/css">
 </head>
 <body>

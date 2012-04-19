@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=UTF-8">
+  <title>Resepti</title>
+  <link href="tyyli.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="otsikko">Resepti</div>
+<div id="container">
+<div id="navipalkki">
+<ul id="navi">
+  <li><a href="index.php">Etusivu</a></li>
+  <li><a href="hakusivu.html">Hakusivu</a></li>
+  <li><a href="kirjautumissivu.html">Kirjaudu sisään</a></li>
+  <li><a href="rekisterointi.html">Rekisteröidy asiakkaaksi</a></li>
+</br>
+  <li><a href="lisaaresepti.php">Uuden reseptin lisäys</a></li>
+  <li><a href="reseptimuokkaus.html">Reseptin muokkaus</a></li>
+</ul>
+</div>
+<div id="sisalto">Tähän tulee reseptihaun tulokset 
+
+<?php
+
+// yhteyden muodostus tietokantaan
+
+include("yhteys.php");
+
+// kyselyn suoritus
+$kysely = $yhteys->prepare("SELECT nimi, yleiskuvaus, resepti, juoma,  FROM resepti INNER JOIN juoma ON 
+juoma.juomaid=resepti.juomaid"); 
+
+$kysely->execute();
+
+// haettujen rivien tulostus
+echo "<table border>";
+while ($rivi = $kysely->fetch()) {
+    echo "<tr>";
+    echo "<td>" . $rivi["nimi"] . "</td>";
+    echo "<td>" . $rivi["yleiskuvaus"] . "</td>";
+    echo "<td>" . $rivi["resepti"] . "</td>";
+    echo "<td>" . $rivi["juoma"] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+
+   echo '<td><a href="poista.php?nimi=' .$rivi["nimi"]. '">Poista resepti </td>';
+   echo '<td><a href="muokkaa.php?nimi=' .$rivi["nimi"]. '">Muokkaa reseptiä </td>';
+
+?>
+
+</div>
+</div>
+</body>
+</html>
