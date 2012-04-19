@@ -21,11 +21,10 @@ try {
     $yhteys->beginTransaction();
     $nimi = $_POST["nimi"];
 
-    $kysely = $yhteys->prepare("INSERT INTO ateria (nimi) VALUES (?)");
+    $kysely = $yhteys->prepare("INSERT INTO ateriakokonaisuus (nimi) VALUES (?)");
     $kysely->execute(array($_POST["nimi"]));
 
-    $reseptiid = $yhteys->prepare("SELECT ateriaid FROM ateria 
-WHERE nimi like '%$nimi' ");
+    $reseptiid = $yhteys->prepare("SELECT ateriaid FROM ateriakokonaisuus WHERE nimi like '%$nimi' ");
     $reseptiid->execute();
 
 //haetaan resepti id 
