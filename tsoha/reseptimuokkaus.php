@@ -18,7 +18,7 @@
 //tällä sivulla lisätään muutokset tietokantaan
 //transaktion alku
             $yhteys->beginTransaction();
-            $nimi = $_POST[nimi];
+            $nimi = $_POST["nimi"];
             $raakaaine = $_POST['raakaaineid'];
 
 

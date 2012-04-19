@@ -36,7 +36,7 @@ echo '</br>';
  }
 
 $kyselyb = $yhteys->prepare ("SELECT nimi FROM resepti WHERE reseptiid IN
-(SELECT reseptiid FROM ateriakokonaisuusvalitaulu WHERE ateriaid IN (SELECT ateriaid FROM ateria WHERE
+(SELECT reseptiid FROM ateriakokonaisuusvalitaulu WHERE ateriaid IN (SELECT ateriaid FROM ateriakokonaisuus WHERE
 nimi like '$v' ) ) ");
 
 $kyselyb->execute();
