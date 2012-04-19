@@ -19,7 +19,7 @@
 
 include("yhteys.php");
 
-$tulos = $_GET[nimi];
+$tulos = $_GET["nimi"];
 
 echo '<form name="intput" action="ateriamuokkaus.php" method="POST">';
 echo '<p>Nimi: </br><input type="text" name="nimi" value='.$tulos.' readonly></p>';
@@ -34,7 +34,7 @@ echo '</textarea>';
 echo '<p>Raaka-Aineet: </br></br>';
 
 */
-$nimi = $_GET[nimi];
+$nimi = $_GET["nimi"];
 
 $kysely =$yhteys->prepare("SELECT reseptiid, nimi FROM resepti ");  
 $kysely->execute();
@@ -43,7 +43,7 @@ echo '  <select name="reseptiid[]" multiple>';
 
 while ($rivi = $kysely->fetch()) {
 
-echo '  <option value=' .$rivi[reseptiid]. ' >'.$rivi[nimi]. '</option>';
+echo '  <option value=' .$rivi["reseptiid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo '</select></br> ';
 echo '</br>';

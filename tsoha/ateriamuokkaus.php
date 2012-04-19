@@ -1,10 +1,10 @@
 <?php
 include("yhteys.php");
-
+try{
 //tällä sivulla lisätään muutokset tietokantaan
 //transaktion alku
 $yhteys->beginTransaction();
-$nimi = $_POST[nimi];
+$nimi = $_POST["nimi"];
 $resepti = $_POST['reseptiid'];
 
 /*
@@ -12,7 +12,7 @@ $kysely = $yhteys->prepare("UPDATE resepti SET yleiskuvaus ='$_POST[kuvaus]', re
 $kysely->execute();
 */
 
-$reseptiid = $yhteys->prepare ("SELECT ateriaid FROM ateria WHERE nimi like '%$nimi' ");
+$reseptiid = $yhteys->prepare ("SELECT ateriaid FROM ateriakokonaisuus WHERE nimi like '%$nimi' ");
 $reseptiid->execute();
 $result = $reseptiid->fetchColumn();
 
@@ -31,8 +31,8 @@ $kysely->execute(array($row, $result));
 
 $yhteys->commit();
 
-}
-	catch (Exception $e) {
+
+	}catch (Exception $e) {
 	$yhteys->rollBack();
 	echo "failed: ". $e->getMessage();
 	}
@@ -41,7 +41,7 @@ $yhteys->commit();
 //$URL="index.html";
 //header ("Location: $URL");
 echo ' ateriaa muokattu.. siirry etusivulle';
-echo ' <a href=index.html>etusivulle</a>';
+echo ' <a href=index.php>etusivulle</a>';
 
 ?>
 </div>

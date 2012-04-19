@@ -7,7 +7,7 @@ $nimi = $_GET['nimi'];
 
 
 // kyselyn suoritus
-$kysely = $yhteys->prepare("DELETE FROM ateria WHERE nimi like '$nimi' ");
+$kysely = $yhteys->prepare("DELETE FROM ateriakokonaisuus WHERE nimi like '$nimi' ");
 $kysely->execute();
 
 

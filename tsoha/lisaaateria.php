@@ -14,8 +14,6 @@
 </div>
 <div id="sisalto">Lisää uusi ateriakokonaisuus järjestelmään
 
-
-
 <form action="aterialisays.php" method="POST">
 <p>Nimi: </br>
 <input type="text" name="nimi" ></p>
