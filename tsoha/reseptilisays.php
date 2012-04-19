@@ -1,3 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=UTF-8">
+  <title>Reseptinlis√§ys</title>
+  <link href="tyyli.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="otsikko">Reseptit</div>
+<div id="container">
+<div id="navipalkki">
+<?php include 'navi.html'; ?>
+</div>
+<div id="sisalto">Reseptihaun tulokset: 
+
 <?php
 try{
 // yhteyden muodostus tietokantaan
@@ -16,7 +32,7 @@ WHERE nimi like '%$nimi' ");
 $reseptiid->execute();
 $result = $reseptiid->fetchColumn();
 
-//lis‰t‰‰n raaka-aineet reseptiin.
+//lis√§t√§√§n raaka-aineet reseptiin.
 
 
 $kysely = $yhteys->prepare("INSERT INTO raakaainevalitaulu (raakaaineid, 
@@ -28,7 +44,7 @@ $kysely->execute(array($row, $result ));
 }
 
 /*
-//lis‰t‰‰n juoma reseptiin
+//lis√§t√§√§n juoma reseptiin
 $kysely = $yhteys->prepare("INSERT INTO juoma (juomaid,
 reseptiid)VALUES (?,?)");
 $myarray = $_POST["juomaid"];
@@ -46,7 +62,11 @@ $yhteys->commit();
 //force siirtyminen vaikka etusivulle. 
 $URL="lisaaresepti.php";
 //header ("Location: $URL");
-echo 'Juoma lisatty...siirry etusivulle';
-echo '<a href="index.php">  Etusivu</a>';
+echo 'Resepti lis√§tty...siirry etusivulle.';
+//echo '<a href="index.php">Etusivu</a>';
 ?>
+</div>
+</div>
+</body>
+</html>
                                              
