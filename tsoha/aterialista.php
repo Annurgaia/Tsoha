@@ -18,7 +18,7 @@
 // yhteyden muodostus tietokantaan
 
                 include("yhteys.php");
-                $tulos = $_GET['ateriahaku'];
+                $tulos = $_GET["ateriahaku"]; //jotain häikkää
                 echo $tulos;
 
 // kyselyn suoritus

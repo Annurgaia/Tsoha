@@ -1,3 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="content-type"
+              content="text/html; charset=UTF-8">
+        <title>Reseptinlisäys</title>
+        <link href="tyyli.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="otsikko">Reseptit</div>
+        <div id="container">
+            <div id="navipalkki">
+                <?php include 'navi.html'; ?>
+            </div>
+            
 <?php
 //poistetaan ko. resepti kannasta
 
@@ -12,12 +27,15 @@ $kysely->execute();
 
 //$URL="index.html";
 //header ("Location: $URL");
-echo 'resepti poistettu.. siirry etusivulle';
-echo ' <a href= "index.html>etusivulle</a>';
+echo ' Resepti poistettu...siirry';
+echo ' <a href=index.php>etusivulle</a>';
 
 // lisätyn rivin id:n selvitys
 //$id = $yhteys->lastInsertId("tuotteet_id_seq");
 //echo "Uuden tuotteen id: $id";
 
 ?>
-
+  </div>
+        </div>
+    </body>
+</html>

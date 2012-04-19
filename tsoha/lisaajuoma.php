@@ -24,8 +24,10 @@ $kysely->execute(array($_POST["nimi"], $_POST["alc"]));
 
 //$URL="index.html";
 //header ("Location: $URL");
-echo 'Juoma lisatty...siirry etusivulle.';
-//echo '<a href="index.php">Etusivu</a>';
+$URL="juomalista.php";
+header ("Location: $URL");
+//echo ' Juoma lisätty...siirry';
+echo ' <a href=index.php>etusivulle</a>';
 ?>
 </div>
 

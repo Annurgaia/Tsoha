@@ -23,17 +23,7 @@ $tulos = $_GET["nimi"];
 
 echo '<form name="intput" action="ateriamuokkaus.php" method="POST">';
 echo '<p>Nimi: </br><input type="text" name="nimi" value='.$tulos.' readonly></p>';
-/*
-echo '<p>Resepti: </br><textarea name="resepti" cols=40 rows=7>';
-echo $tulos[resepti];
-echo '</textarea></p>';
 
-echo '<p>Yleiskuvaus: </br><textarea name="kuvaus" cols=40 rows=7>';
-echo $tulos[yleiskuvaus];
-echo '</textarea>';
-echo '<p>Raaka-Aineet: </br></br>';
-
-*/
 $nimi = $_GET["nimi"];
 
 $kysely =$yhteys->prepare("SELECT reseptiid, nimi FROM resepti ");  

@@ -20,8 +20,8 @@ content="text/html; charset=UTF-8">
 include("yhteys.php");
 
 // kyselyn suoritus
-$kysely = $yhteys->prepare("SELECT * FROM resepti WHERE nimi
-LIKE '%$_GET[reseptihaku]%' ");
+
+$kysely = $yhteys->prepare("SELECT * FROM resepti WHERE nimi LIKE '%$_GET['reseptihaku']%' ");
 $kysely->execute();
 
 // haettujen rivien tulostus
