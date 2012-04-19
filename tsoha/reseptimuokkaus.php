@@ -13,6 +13,7 @@
                 <?php include 'navi.html'; ?>
             </div>
             <?php
+            try{
             include("yhteys.php");
 //tällä sivulla lisätään muutokset tietokantaan
 //transaktion alku

@@ -5,7 +5,7 @@ include("yhteys.php");
 
 
 // kyselyn suoritus
-$kysely = $yhteys->prepare("SELECT * FROM reseptit");
+$kysely = $yhteys->prepare("SELECT * FROM resepti");
 $kysely->execute();
 
 //Haettujen rivien tulostus

@@ -4,7 +4,7 @@
 // yhteyden muodostus tietokantaan
 include("yhteys.php");
 
-$nimi = $_GET[nimi];
+$nimi = $_GET["nimi"];
 
 // kyselyn suoritus
 $kysely = $yhteys->prepare("DELETE FROM resepti WHERE nimi like '$nimi' ");

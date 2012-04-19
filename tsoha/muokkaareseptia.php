@@ -28,11 +28,11 @@ echo '<form name="intput" action="reseptimuokkaus.php" method="POST">';
 echo '<p>Nimi: </br><input type="text" name="nimi" value="'.$tulos["nimi"].'" readonly></p>';
 
 echo '<p>Resepti: </br><textarea name="resepti" cols=40 rows=7>';
-echo $tulos[resepti];
+echo $tulos["resepti"];
 echo '</textarea></p>';
 
 echo '<p>Yleiskuvaus: </br><textarea name="kuvaus" cols=40 rows=7>';
-echo $tulos[yleiskuvaus];
+echo $tulos["yleiskuvaus"];
 echo '</textarea>';
 echo '<p>Raaka-Aineet: </br></br>';
 
