@@ -58,12 +58,22 @@ while($rivib = $kyselyb->fetch()) {
 echo $rivib["nimi"] ;
 echo '</br> ';
 }
+ 
+    echo '</br></br>';      
+    echo '<td><a href="poistaateria.php?nimi='. $nimi.'  ">Poista ateriakokonaisuus </td>';
+	echo '</br>';
+    echo '<td><a href="muokkaaateriaa.php?nimi=' .$nimi.'">Muokkaa ateriakokonaisuutta </td>';
 
+   echo '</br>';
+    
+
+echo '</table>';
+/*
     echo '</br></br>';
     echo '<td><a href="poistaateria.php?nimi='.$v.' ">Poista ateriakokonaisuus </td>';
     echo '</br>';
     echo '<td><a href="muokkaaateriaa.php?nimi=' .$v.' " >Muokkaa ateriakokonaisuutta </td>';
-
+*/
 ?>
 </div>
 </div>
