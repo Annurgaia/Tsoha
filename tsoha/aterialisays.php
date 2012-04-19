@@ -46,7 +46,7 @@ try {
 //force siirtyminen vaikka etusivulle. 
 //$URL = "lisaaateria.php";
 //header("Location: $URL");
-echo ' Ateriaa lisätty...siirry';
+echo ' Ateriakokonaisuus lisätty...siirry';
 echo ' <a href=index.php>etusivulle</a>';
 ?>
 </div>
