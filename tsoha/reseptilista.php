@@ -25,8 +25,6 @@
 
                 $kysely->execute();
 
-//$result = $kysely->fetchAll();
-//print_r($result);
 // haettujen rivien tulostus
                 echo "<table border>";
                 echo '<tr><td>Nimi</td><td>Resepti</td></tr>';
@@ -36,8 +34,6 @@
                     echo "<tr>";
                     echo '<td><a href="resepti.php?nimi=' . $rivi["nimi"] . '">' . $rivi["nimi"] . ' </td>';
                     echo '<td>' . $rivi["yleiskuvaus"] . ' </td>';
-                    // echo '<td>' . $rivi["resepti"] .' </td>';
-                    // echo '<td>' . $rivi["juoma"] .' </td>';
                     echo "</tr>";
                 }
                 echo "</table>";

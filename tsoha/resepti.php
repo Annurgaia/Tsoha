@@ -21,7 +21,6 @@
 
                 $v = $_GET['nimi'];
 
-// kyselyn suoritus.. tässä on vielä vähän häikkää miten pitäisi toimia.
                 $kysely = $yhteys->prepare("SELECT nimi, resepti, yleiskuvaus FROM resepti WHERE nimi like '%$v%' ");
 
                 $kysely->execute();
@@ -30,12 +29,11 @@
 
                 while ($rivi = $kysely->fetch()) {
 
-                    echo '</br>Nimi:</br> ';
+                    echo '</br><b>Nimi:</b></br> ';
                     echo $rivi["nimi"];
-                    echo '</br>';
-                    echo 'Kuvaus: </br>';
+                    echo '</br><b>Kuvaus: </b></br>';
                     echo $rivi["yleiskuvaus"];
-                    echo '</br>Resepti: </br>';
+                    echo '</br><b>Resepti: </b></br>';
                     echo $rivi["resepti"];
                     echo '</br>';
                 }
@@ -43,12 +41,11 @@
                 $nimi = $kysely->fetchColumn();
 
                 $kyselyb = $yhteys->prepare("SELECT nimi FROM juoma WHERE juomaid = (SELECT juomaid FROM resepti WHERE nimi like '%$v%' ) ");
-                $kyselyb->execute(); //Uncaught exception 'PDOException' with message 'SQLSTATE[21000]: Cardinality violation: 7 ERROR:  more than one row returned by a subquery used as an expression' in /home/annahiet/htdocs/tsoha/resepti.php:46
+                $kyselyb->execute(); 
 
 
                 while ($rivib = $kyselyb->fetch()) {
-                    echo '</br>';
-                    echo 'Suositeltava ruokajuoma: </br>';
+                    echo '</br><b>Suositeltava ruokajuoma: </b></br>';
                     echo $rivib["nimi"];
                     echo '</br></br> ';
                 }
@@ -58,7 +55,7 @@
                 $kyselyc = $yhteys->prepare("SELECT raakaaine.nimi AS raakaaine FROM raakaaine WHERE raakaaineid in (SELECT raakaaineid FROM raakaainevalitaulu WHERE reseptiid in(SELECT reseptiid FROM resepti WHERE nimi like '$v' ) ) ");
                 $kyselyc->execute();
 
-                echo 'Tarvittavat raaka-aineet: </br> ';
+                echo '<b>Tarvittavat raaka-aineet: </b></br> ';
 
                 while ($rivi = $kyselyc->fetch()) {
 

@@ -19,7 +19,6 @@
                 include("yhteys.php");
 
                 $v = $_GET['nimi'];
-// kyselyn suoritus.. tässä on vielä vähän häikkää miten pitäisi toimia. 
 
 
                 $kysely = $yhteys->prepare("SELECT nimi FROM ateriakokonaisuus WHERE nimi like '%$v%' ");
@@ -29,7 +28,7 @@
 
 while ($rivi = $kysely->fetch()) {
     
-     echo '</br>Nimi:</br> ';
+     echo '</br><b>Nimi:</b></br> ';
      echo $rivi["nimi"] ;
 echo '</br>';
 echo '</br>';
@@ -39,12 +38,12 @@ $kyselyb = $yhteys->prepare ("SELECT nimi FROM resepti WHERE reseptiid IN (SELEC
 
 $kyselyb->execute();
 
-echo 'Reseptit: ';
+echo '<b>Reseptit: </b>';
 echo '</br>';
 while($rivib = $kyselyb->fetch()) {
  
-//näistä pitäisi tehdä linkit!
-echo $rivib["nimi"] ;
+
+echo '<td><a href="resepti.php?nimi=' . $rivib["nimi"] . '">' . $rivib["nimi"] . ' </td>';
 echo '</br> ';
 }
 

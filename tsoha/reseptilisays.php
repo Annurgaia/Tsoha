@@ -34,7 +34,7 @@
 
 
                     $kysely = $yhteys->prepare("INSERT INTO raakaainevalitaulu (raakaaineid, reseptiid)VALUES (?,?)");
-                    $myarray = $_POST['raakaaineid'];
+                    $myarray = $_POST["raakaaineid"];
                     foreach ($myarray as $row) {
 
                         $kysely->execute(array($row, $result));

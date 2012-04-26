@@ -14,7 +14,6 @@
 </div>
 <div id="sisalto">Muokkaa reseptiä:
 
-
 <?php
 
 include("yhteys.php");
@@ -49,8 +48,6 @@ echo ' <option value=' .$rivi["raakaaineid"]. ' >'.$rivi["nimi"]. '</option>';
   }
 echo '</select></br> ';
 
-
-//juomanlisays haku.. pitää muokata vielä
 $kysely =$yhteys->prepare("SELECT juomaid, nimi FROM juoma");
 $kysely->execute();
 echo 'Valitse juoma: </br>';

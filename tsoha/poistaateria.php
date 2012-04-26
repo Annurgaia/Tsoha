@@ -11,11 +11,7 @@ $kysely = $yhteys->prepare("DELETE FROM ateriakokonaisuus WHERE nimi like '$nimi
 $kysely->execute();
 
 
-//$URL="index.html";
-//header ("Location: $URL");
-
-// lisätyn rivin id:n selvitys
-//$id = $yhteys->lastInsertId("tuotteet_id_seq");
-//echo "Uuden tuotteen id: $id";
+$URL="index.php";
+header ("Location: $URL");
 
 ?>
