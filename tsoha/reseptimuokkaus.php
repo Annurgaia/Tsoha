@@ -19,7 +19,7 @@
 //transaktion alku
             $yhteys->beginTransaction();
             $nimi = $_POST["nimi"];
-            $raakaaine = $_POST['raakaaineid'];
+            $raakaaine = $_POST["raakaaineid"];
 
 
             $kysely = $yhteys->prepare("UPDATE resepti SET yleiskuvaus ='$_POST[kuvaus]', resepti ='$_POST[resepti]', juomaid ='$_POST[juomaid]' WHERE nimi like '$nimi' ");
