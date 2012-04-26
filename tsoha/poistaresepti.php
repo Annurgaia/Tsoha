@@ -25,15 +25,8 @@ $nimi = $_GET["nimi"];
 $kysely = $yhteys->prepare("DELETE FROM resepti WHERE nimi like '$nimi' ");
 $kysely->execute();
 
-//$URL="index.html";
-//header ("Location: $URL");
 echo ' Resepti poistettu...siirry';
 echo ' <a href=index.php>etusivulle</a>';
-
-// lisätyn rivin id:n selvitys
-//$id = $yhteys->lastInsertId("tuotteet_id_seq");
-//echo "Uuden tuotteen id: $id";
-
 ?>
   </div>
         </div>

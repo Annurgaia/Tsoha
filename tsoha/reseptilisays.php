@@ -48,7 +48,6 @@
 
 //force siirtyminen vaikka etusivulle. 
                 $URL = "lisaaresepti.php";
-//header ("Location: $URL");
                 echo 'Resepti lisätty...siirry ';
 echo '<a href="index.php">etusivulle</a>';
                 ?>

@@ -21,11 +21,6 @@ $yhteys->beginTransaction();
 $nimi = $_POST["nimi"];
 $resepti = $_POST["reseptiid"];
 
-/*
-$kysely = $yhteys->prepare("UPDATE resepti SET yleiskuvaus ='$_POST[kuvaus]', resepti ='$_POST[resepti]', juomaid ='$_POST[juomaid]'  WHERE nimi like '$nimi' "); 
-$kysely->execute();
-*/
-
 $reseptiid = $yhteys->prepare ("SELECT ateriaid FROM ateriakokonaisuus WHERE nimi like '%$nimi' ");
 $reseptiid->execute();
 $result = $reseptiid->fetchColumn();
@@ -51,9 +46,6 @@ $yhteys->commit();
 	echo "failed: ". $e->getMessage();
 	}
 
-//force siirtyminen vaikka etusivulle. 
-//$URL="index.html";
-//header ("Location: $URL");
 echo ' Ateriaa muokattu...siirry';
 echo ' <a href=index.php>etusivulle</a>';
 

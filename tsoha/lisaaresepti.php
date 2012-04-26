@@ -39,7 +39,7 @@
                     echo '</select></br> ';
                     echo '</br>';
 
-//juomanlisays haku.. pitää muokata vielä
+
                     $kysely = $yhteys->prepare("SELECT juomaid, nimi FROM juoma");
                     $kysely->execute();
                     echo 'Valitse juoma: </br>';

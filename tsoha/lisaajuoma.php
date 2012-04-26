@@ -22,11 +22,8 @@ include("yhteys.php");
 $kysely = $yhteys->prepare("INSERT INTO juoma (nimi, alc) VALUES (?, ?)");
 $kysely->execute(array($_POST["nimi"], $_POST["alc"]));
 
-//$URL="index.html";
-//header ("Location: $URL");
 $URL="juomalista.php";
 header ("Location: $URL");
-//echo ' Juoma lisätty...siirry';
 echo ' <a href=index.php>etusivulle</a>';
 ?>
 </div>

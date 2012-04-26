@@ -10,8 +10,9 @@ $nimi = $_GET['nimi'];
 $kysely = $yhteys->prepare("DELETE FROM ateriakokonaisuus WHERE nimi like '$nimi' ");
 $kysely->execute();
 
-
-$URL="index.php";
-header ("Location: $URL");
+echo ' Ateriakokonaisuus poistettu...siirry';
+echo ' <a href=index.php>etusivulle</a>';
+//$URL="index.php";
+//header ("Location: $URL");
 
 ?>

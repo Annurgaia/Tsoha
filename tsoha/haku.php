@@ -29,8 +29,6 @@ echo "<table border>";
 while ($rivi = $kysely->fetch()) {
     echo "<tr>";
     echo '<td><a href="resepti.php?nimi=' . $rivi["nimi"] . '>' . $rivi["nimi"] . ' </td>';
-   // echo "<td>" . $rivi["nimi"] . "</td>";
-   // echo "<td>" . $rivi[""] . "</td>";
     echo "</tr>";
 }
 echo "</table>";

@@ -18,16 +18,13 @@
 // yhteyden muodostus tietokantaan
 
                 include("yhteys.php");
-                $tulos = $_GET["ateriahaku"]; //jotain häikkää
+                $tulos = $_GET["ateriahaku"]; 
                 echo $tulos;
 
 // kyselyn suoritus
                 $kysely = $yhteys->prepare("SELECT nimi FROM ateriakokonaisuus WHERE nimi like '%$tulos%' ");
                 $kysely->execute();
 
-//$result = $kysely->fetchAll();
-//print_r($result);
-// haettujen rivien tulostus
                 echo "<table border>";
                 echo '<tr><td>Nimi</td></tr>';
 
